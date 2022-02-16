@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
@@ -19,7 +21,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="text-center p-5 text-success fw-bold">My Pocket</h1>
+          <div class="section_title">
+          <h1 class="text-center text-success fw-bold">My Pocket</h1>
+          </div>
         </div>
       </div>
     </div>
@@ -40,7 +44,7 @@
             <label for="basic-url" class="form-label fw-bold fs-4">My income</label>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Income</span>
-              <input type="text" class="form-control" id="income" placeholder="">
+              <input onblur="checkIncomeBalane()" type="text" class="form-control" id="income" value="25000" placeholder="">
             </div>
             <!-- mt Expenses -->
             <label for="basic-url" class="form-label fw-bold text-center mt-2">My expenses</label>
@@ -63,7 +67,7 @@
               <h4>Balance: <span id="balance">0</span></h4>
             </div>
             <!-- Saving area -->
-            <div class="savings">
+            <div id="savings" class="savings">
               <div class="input-group">
                 <span class="input-group-text">Save</span>
                 <input type="text" class="form-control" value="20">
@@ -72,7 +76,7 @@
               </div>
             </div>
             <!-- Total Balance area -->
-            <div class="my_balance total_ammount">
+            <div id="total_ammount" class="my_balance total_ammount">
               <h4>Saving Amount: <span id="total_saving">0</span></h4>
               <h4>Remaining Balance: <span id="remaining_balance">0</span></h4>
             </div>

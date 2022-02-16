@@ -1,3 +1,8 @@
+/* Section css */
+.section_title h1 {
+	padding: 25px 0;
+}
+
 /* Cover image area css */
 .calculate_left img {
 	height: 640px;
@@ -29,4 +34,13 @@
 }
 .my_balance.total_ammount h4 {
 	color: #E0E2EE;
+}
+.btn-success:disabled {
+	color: #fff;
+	background-color: #999;
+	border-color: #999;
+}
+.waring_alert {
+	color: #ff0000;
+	font-size: 16px;
 }
