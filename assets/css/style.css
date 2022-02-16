@@ -1,0 +1,32 @@
+/* Cover image area css */
+.calculate_left img {
+	height: 640px;
+}
+
+/* My expence area css */
+.my_expences {
+	background: #E0E2ED;
+	padding: 15px 70px;
+}
+.input-group-text {
+	width: 70px;
+}
+
+.my_balance {
+  background: #DBD8E7;
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.my_balance h4 {
+  color: #698A71;
+  font-size: 17px;
+  font-weight: 700;
+}
+.my_balance.total_ammount {
+	background: #8DAE87;
+}
+.my_balance.total_ammount h4 {
+	color: #E0E2EE;
+}

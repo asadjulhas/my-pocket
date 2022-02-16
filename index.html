@@ -19,7 +19,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>My Pocket</h1>
+          <h1 class="text-center p-5 text-success fw-bold">My Pocket</h1>
         </div>
       </div>
     </div>
@@ -29,19 +29,54 @@
   <section class="claculate_area">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-7">
           <div class="calculate_left">
-            <img class="img-fluid" src="assets/images/cover.jpg" alt="">
+            <img class="img-fluid" src="assets/images/cover(1).jpg" alt="">
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="my_expences">
-            
-            <label for="basic-url" class="form-label">Income</label>
+            <!-- mt income -->
+            <label for="basic-url" class="form-label fw-bold fs-4">My income</label>
             <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <span class="input-group-text" id="basic-addon1">Income</span>
+              <input type="text" class="form-control" id="income" placeholder="">
             </div>
+            <!-- mt Expenses -->
+            <label for="basic-url" class="form-label fw-bold text-center mt-2">My expenses</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon2">Food</span>
+              <input type="text" class="form-control" id="food" placeholder="">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon3">Rent</span>
+              <input type="text" class="form-control" id="rent" placeholder="">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon4">Clothes</span>
+              <input type="text" class="form-control" id="clothes" placeholder="">
+            </div>
+            <button id="expance_cal" type="button" class="btn btn-success">&nbsp;&nbsp; Calculate &nbsp;&nbsp;</button>
+              <!-- Balance area -->
+            <div class="my_balance">
+              <h4>Total Expenses: <span id="total_expence">0</span></h4>
+              <h4>Balance: <span id="balance">0</span></h4>
+            </div>
+            <!-- Saving area -->
+            <div class="savings">
+              <div class="input-group">
+                <span class="input-group-text">Save</span>
+                <input type="text" class="form-control" value="20">
+                <span class="input-group-text">%</span>
+                <button id="saving_btn" type="button" class="btn btn-success">&nbsp;&nbsp;&nbsp; Saveing &nbsp;&nbsp;&nbsp;</button>
+              </div>
+            </div>
+            <!-- Total Balance area -->
+            <div class="my_balance total_ammount">
+              <h4>Saving Amount: <span id="total_saving">0</span></h4>
+              <h4>Remaining Balance: <span id="remaining_balance">0</span></h4>
+            </div>
+            
           </div>
         </div>
       </div>
