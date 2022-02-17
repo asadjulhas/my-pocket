@@ -8,9 +8,10 @@ function getById(id) {
 function validateWarind(id) {
    getById(id).value = '';
    getById(id).setAttribute('placeholder', 'Please input a valid number');
+   getById("total_expence").innerHTML = `<span class="waring_alert_total">Please input a valid number on "${id}" filed</span>`;
 }
 
-// Check empty value
+// Check empty value for expense fileds
 function checkEmptyValue(id) {
   let checkNotEmpty = getById(id).value;
   if (checkNotEmpty == "") {
@@ -33,7 +34,7 @@ function checkIncomeBalane(id) {
     getById("saving_btn").disabled = false;
   }
 }
-checkIncomeBalane("income")
+//checkIncomeBalane("income")
 
 // Calculate button action for total expense and balance
 getById("expance_cal").addEventListener(
