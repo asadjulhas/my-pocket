@@ -74,8 +74,11 @@ getById("saving_btn").addEventListener(
   "click", function () {
     // Get my incoam
     const myIncome = getById("income").value;
+    // Get savingPercent
     const savingPercent = getById("saving_percent").value;
+    // Calculate savingAmmount
     const savingAmmount = myIncome / 100 * savingPercent;
+    // Get Final balance
     const remainingBalance = getById("balance").innerText - savingAmmount;
     if (remainingBalance < 0) {
       getById("total_saving").innerHTML = `<span class="waring_alert_total">Don't able to save ${savingPercent}% money.</span>`;
