@@ -32,6 +32,7 @@ function checkIncomeBalane(id) {
 ;  } else {
     getById("expance_cal").disabled = false;
     getById("saving_btn").disabled = false;
+    getById("total_expence").innerHTML = '';
   }
 }
 //checkIncomeBalane("income")
