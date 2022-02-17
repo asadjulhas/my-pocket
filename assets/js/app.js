@@ -4,6 +4,12 @@ function getById(id) {
   return getId;
 }
 
+// Set placeholder waring
+function validateWarind(id) {
+   getById(id).value = '';
+   getById(id).setAttribute('placeholder', 'Please input a valid number');
+}
+
 // Check empty value
 function checkEmptyValue(id) {
   let checkNotEmpty = getById(id).value;
@@ -15,22 +21,23 @@ function checkEmptyValue(id) {
   return checkNotEmpty;
 }
 
-// Check input filed is not empty
-function checkIncomeBalane() {
-  const balanceValue = getById("income").value;
-  if (balanceValue == '') {
+// Check input filed is not empty or string
+function checkIncomeBalane(id) {
+  const balanceValue = getById(id).value;
+  if (balanceValue == '' || balanceValue < 0) {
     getById("expance_cal").disabled = true;
     getById("saving_btn").disabled = true;
-  } else {
+    validateWarind(id);
+;  } else {
     getById("expance_cal").disabled = false;
     getById("saving_btn").disabled = false;
   }
 }
-checkIncomeBalane()
+checkIncomeBalane("income")
 
+// Calculate button action for total expense and balance
 getById("expance_cal").addEventListener(
-  "click",
-  function () {
+  "click", function () {
     // Get my incoam
     const myIncome = getById("income").value;
     // Get all Expenses
@@ -40,7 +47,7 @@ getById("expance_cal").addEventListener(
     const totalExpenses = foorExpense + rentExpense + clothesExpense;
     // Balance after expense
     const nowBalance = myIncome - totalExpenses;
-    // Show expense on view
+     // Show expense on view
     getById("total_expence").innerText = totalExpenses;
     // Check is expense is more than savings
     if (nowBalance < 0) {
@@ -62,15 +69,14 @@ getById("expance_cal").addEventListener(
 
 // Savings and total balance
 getById("saving_btn").addEventListener(
-  "click",
-  function () {
+  "click", function () {
     // Get my incoam
     const myIncome = getById("income").value;
     const savingPercent = getById("saving_percent").value;
     const savingAmmount = myIncome / 100 * savingPercent;
     const remainingBalance = getById("balance").innerText - savingAmmount;
     if (remainingBalance < 0) {
-      getById("total_saving").innerHTML = `<span class="waring_alert">Don't able to save ${savingPercent}% money.</span>`;
+      getById("total_saving").innerHTML = `<span class="waring_alert_total">Don't able to save ${savingPercent}% money.</span>`;
       getById("remaining_balance").innerText = '';
       getById("saving_percent").style.border = "1px solid #ff0000";
     } else {
