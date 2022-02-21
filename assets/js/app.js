@@ -1,24 +1,24 @@
 // function for get by ID
-function getById(id) {
+/* function getById(id) {
+  
+} */
+
+const getById = id => {
   const getId = document.getElementById(id);
   return getId;
 }
 
 // Set placeholder waring
-function validateWarind(id) {
+const validateWarind = id => {
    getById(id).value = '';
    getById(id).setAttribute('placeholder', 'Please input a valid number');
    getById("total_expence").innerHTML = `<span class="waring_alert_total">Please input a valid number on "${id}" filed</span>`;
 }
 
 // Check empty value for expense fileds
-function checkEmptyValue(id) {
+const checkEmptyValue = id => {
   let checkNotEmpty = getById(id).value;
-  if (checkNotEmpty == "") {
-    checkNotEmpty = 0;
-  } else {
-    checkNotEmpty = checkNotEmpty;
-  }
+  checkNotEmpty ? checkNotEmpty : checkNotEmpty = 0;
   return checkNotEmpty;
 }
 
